@@ -1,0 +1,51 @@
+JAVA INSTALLATION
+
+https://download.oracle.com/otn/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.rpm
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-linux-x64.rpm
+/usr/java/jdk1.8.0_141
+
+JAVA_HOME=/usr/java/jdk1.8.0_141
+PATH=$PATH:$JAVA_HOME:$HOME/.local/bin:$HOME/bin
+===========================================================================================================================  
+TOMCAT INSTALLATION
+
+wget http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.43/bin/apache-tomcat-8.5.43.tar.gz
+tar xvfz apache-tomcat-8.5.43.tar.gz
+commenting out context antiresource locking elements valve tag for accessibility from public url
+Adding roles and cridentialls in TOmcat:
+<role rolename="manager-gui"/>
+  <user username="admin" password="admin" roles="manager-gui"/>
+  
+===========================================================================================================================  
+
+JENKINS INSTALLATION
+
+sudo wget  http://pkg.jenkins-ci.org/redhat/jenkins.repo or 
+sudo wget https://pkg.jenkins.io/redhat-stable/jenkins-2.176.2-1.1.noarch.rpm
+
+GETTING JENKINS RPM and KEY
+sudo wget  https://pkg.jenkins.io/redhat-stable/jenkins-2.176.2-1.1.noarch.rpm
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum install jenkins-2.176.2-1.1.noarch.rpm -yum
+jenkins will be installed in var/lib/jenkins/ directory of root
+
+sudo service jenkins start
+sudo service jenkins restart
+sudo service jenkins status
+sudo service jenkins stop
+
+
+copy admin password from var/lib/jenkins/secrets/initialAdminPassword file
+
+UserName: rchilla
+Password: admin 
+
+===========================================================================================================================  
+
+
+Checking jdks installed:
+sudo alternatives --config java
+===========================================================================================================================  
+
+ ssh-keygen -t rsa -C "testing@gmail.com"
+ /home/ec2-user/
